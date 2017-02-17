@@ -1,2 +1,6 @@
 # appc.openapi
-Arrow Connector to APIs described with Open API Specification
+
+Work In Progress. See Development Branch.
+
+
+

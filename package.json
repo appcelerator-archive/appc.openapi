@@ -1,0 +1,52 @@
+{
+    "name": "appc.openapi",
+    "description": "Arrow Connector to APIs described with Open API Specification",
+    "version": "1.0.0",
+    "author": "Axway R&D",
+    "license": "Apache2.0",
+    "framework": "none",
+    "keywords": [
+        "appcelerator",
+        "arrow",
+        "connector",
+        "openapi",
+        "swagger",
+        "rest",
+        "api"
+    ],
+    "repository": {},
+    "private": true,
+    "dependencies": {
+        "pkginfo": "^0.3.1",
+        "semver": "^5.0.3"
+    },
+    "devDependencies": {
+        "arrow": "^*",
+        "cross-env": "^3.1.4",
+        "husky": "^0.13.1",
+        "nyc": "^10.1.2",
+        "pluralize": "^3.1.0",
+        "snazzy": "^6.0.0",
+        "standard": "^8.6.0",
+        "tap": "^10.1.0",
+        "tap-diff": "^0.1.1"
+    },
+    "scripts": {
+        "start": "appc run",
+        "test": "npm run lint-fix && npm run test:*",
+        "test:integration": "npm run lint-fix && tap test/integration/*.js --color --bail --cov",
+        "test:unit": "npm run lint-fix && tap test/unit/*.js --color --bail --cov",
+        "lint": "standard | snazzy",
+        "lint-fix": "standard --fix | snazzy",
+        "precommit": "npm run lint-fix",
+        "standalone": "tap test/integration/query.integration.js --color --bail --cov"
+    },
+    "standard": {
+        "ignore": [
+            ".nyc_output",
+            ".vscode",
+            "coverage",
+            "node_modules"
+        ]
+    }
+}
